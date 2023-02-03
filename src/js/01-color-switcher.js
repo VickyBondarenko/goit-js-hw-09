@@ -8,7 +8,7 @@ const body = document.body;
 let timerId = null;
 btnStop.setAttribute('disabled', true);
 
-changeColor = () => {
+const changeColor = () => {
   const color = getRandomHexColor();
   body.style.backgroundColor = color;
 };
