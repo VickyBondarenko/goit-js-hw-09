@@ -11,6 +11,7 @@ const options = {
   },
 };
 
-const datePicker = document.getElementById(datetime - picker);
+const datePicker = document.getElementById('datetime-picker');
 console.log(datePicker);
+
 const fp = flatpickr(datePicker, options);
