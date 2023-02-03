@@ -16,6 +16,7 @@ const changeColor = () => {
 btnStart.addEventListener('click', () => {
   btnStop.removeAttribute('disabled');
   btnStart.setAttribute('disabled', true);
+  changeColor();
   timerId = setInterval(changeColor, 1000);
   console.log('start');
 });
