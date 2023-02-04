@@ -34,19 +34,13 @@ btnStart.addEventListener('click', onClick);
 function onClick() {
   const intervalId = setInterval(() => {
     const deltaTime = calculeteDeltaTime();
-    if (deltaTime > 0) {
+    if (deltaTime >= 0) {
       const timeInterval = convertMs(deltaTime);
-
       addLeadingZero(timeInterval);
     } else {
-      return;
+      clearInterval(intervalId);
     }
-
-    // clearInterval(timerId);
   }, 1000);
-  if (Date.now() === fp.selectedDates[0]) {
-    clearInterval(intervalId);
-  }
 }
 
 function calculeteDeltaTime() {
