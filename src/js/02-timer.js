@@ -35,8 +35,7 @@ function onClick() {
   const intervalId = setInterval(() => {
     const deltaTime = calculeteDeltaTime();
     if (deltaTime >= 0) {
-      const timeInterval = convertMs(deltaTime);
-      addLeadingZero(timeInterval);
+      showTimer(deltaTime);
     } else {
       clearInterval(intervalId);
       Notify.success('time is over');
@@ -44,14 +43,9 @@ function onClick() {
   }, 1000);
 }
 
-function calculeteDeltaTime() {
-  const selectetDate = fp.selectedDates[0];
-  const currentTime = Date.now();
-  const startTime = selectetDate.getTime();
-  const deltaTime = startTime - currentTime;
-  console.log(deltaTime);
-
-  return deltaTime;
+function showTimer(ms) {
+  const timeInterval = convertMs(ms);
+  addLeadingZero(timeInterval);
 }
 
 function convertMs(ms) {
@@ -71,6 +65,15 @@ function convertMs(ms) {
   const seconds = Math.floor((((ms % day) % hour) % minute) / second);
 
   return { days, hours, minutes, seconds };
+}
+function calculeteDeltaTime() {
+  const selectetDate = fp.selectedDates[0];
+  const currentTime = Date.now();
+  const startTime = selectetDate.getTime();
+  const deltaTime = startTime - currentTime;
+  console.log(deltaTime);
+
+  return deltaTime;
 }
 
 function addLeadingZero(date) {
