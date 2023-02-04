@@ -39,6 +39,7 @@ function onClick() {
       addLeadingZero(timeInterval);
     } else {
       clearInterval(intervalId);
+      Notify.success('time is over');
     }
   }, 1000);
 }
