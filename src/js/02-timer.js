@@ -8,6 +8,8 @@ const hours = document.querySelector('[data-hours]');
 const minutes = document.querySelector('[data-minutes]');
 const seconds = document.querySelector('[data-seconds]');
 const input = document.getElementById('datetime-picker');
+console.log('hello');
+console.log(input);
 
 const options = {
   enableTime: true,
@@ -32,6 +34,8 @@ btnStart.setAttribute('disabled', true);
 btnStart.addEventListener('click', onClick);
 
 function onClick() {
+  btnStart.disabled = true;
+  input.setAttribute('disabled', true);
   const intervalId = setInterval(() => {
     const deltaTime = calculeteDeltaTime();
     if (deltaTime >= 0) {
