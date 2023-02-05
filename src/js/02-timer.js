@@ -8,8 +8,6 @@ const hours = document.querySelector('[data-hours]');
 const minutes = document.querySelector('[data-minutes]');
 const seconds = document.querySelector('[data-seconds]');
 const input = document.getElementById('datetime-picker');
-console.log('hello');
-console.log(input);
 
 const options = {
   enableTime: true,
